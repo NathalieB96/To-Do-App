@@ -8,20 +8,36 @@
     </div>
 
 
-    <div class="field is-grouped mb-5">
-    <p class="control is-expanded">
-      <input class="input" type="text" placeholder="Add a To-Do">
-    </p>
-    <p class="control">
-      <a class="button is-info">
-        Add
-      </a>
-    </p>
-    </div>
+    <form
+      @submit.prevent="addTodo"
+    >
+      <div class="field is-grouped mb-5">
+        <p class="control is-expanded">
+          <input 
+            v-model="newTodoContent"
+            class="input" 
+            type="text" 
+            placeholder="Add a To-Do"
+            >
+        </p>
+        <p class="control">
+          <button 
+          :disabled="!newTodoContent"
+          class="button is-info">
+
+            Add
+          </button>
+            
+
+        </p>
+      </div>
+    </form>
+
+    
   </div>
 
   <div
-    v-for="i in 5"
+    v-for="todo in todos"
     class="card mb-5"
     >
     <div class="card-content">
@@ -29,7 +45,8 @@
 
         <div class="columns is-mobile is-vcentered">
           <div class="column">
-            Buy apples
+            {{todo.content}}
+
           </div>
           <div class="column is-5 has-text-right">
             <button class="button is-light">
@@ -50,7 +67,48 @@
 
 </template>
 
-<script>
+<script setup>
+
+/*
+  imports
+*/
+
+import { ref } from 'vue';
+import { v4 as uuidv4 } from 'uuid';
+
+/*
+  todos
+*/
+
+const todos = ref([
+  // {
+  //   id: 'id1',
+  //   content: 'buy apples',
+  //   done: false
+  // },
+  // {
+  //   id: 'id2',
+  //   content: 'eat my apples',
+  //   done: false
+  // }
+])
+
+/*
+  add todo
+*/
+const newTodoContent = ref('')
+
+const addTodo = () => {
+  const newTodo = {
+    id: uuidv4(),
+    content: newTodoContent.value,
+    done: false
+  }
+  todos.value.unshift(newTodo)
+  // clear input field
+  newTodoContent.value = ''
+}
+
 </script>
 
 
