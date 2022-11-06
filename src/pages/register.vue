@@ -14,7 +14,8 @@
     const router = useRouter()
 
     const register = () => {
-    createUserWithEmailAndPassword(getAuth(), email.value, password.value)
+    const auth = getAuth()
+    createUserWithEmailAndPassword(auth, email.value, password.value)
         .then((data) => {
             console.log("Successfully registered");
             router.push('/todo');
