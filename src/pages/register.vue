@@ -3,11 +3,16 @@
     <p><input type="text" placeholder="E-mail" v-model="email"/></p>
     <p><input type="password" placeholder="Password" v-model="password"/></p>
     <p><button @click="register">Register</button></p>
+    <p><button @click="signInWithGoogle">Sign In with Google</button></p>
 </template>
 
 <script setup>
     import { ref } from 'vue';
-    import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+    import { getAuth, 
+        createUserWithEmailAndPassword,
+        GoogleAuthProvider,
+        signInWithPopup
+     } from "firebase/auth";
     import { useRouter } from 'vue-router'; //imports router
     const email = ref("");
     const password = ref("");
@@ -27,6 +32,14 @@
     };
 
     const signInWithGoogle = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(getAuth(), provider) //creaetes google pop up to sign in 
+            .then((result) => {
+                console.log(result.user);
+                router.push("/todo");
+            })
+        .catch((error) => {
 
-    }
+        });
+    };
 </script>

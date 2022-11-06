@@ -4,7 +4,7 @@
     <p><input type="password" placeholder="Password" v-model="password"/></p>
     <p v-if="errMsg">{{ errMsg}}</p>
     <p><button @click="register">Sign-In</button></p>
-    <p><button @click="signInWithGoogle">Sign In with Google</button></p>
+
 </template>
 
 <script setup>
