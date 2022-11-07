@@ -1,37 +1,32 @@
 <template>
     <div class="todo">
 
-<div class="title has-text-centered">
-  My To-Do
-</div>
+    <div class="title has-text-centered">
+    My To-Do
+    </div>
 
 
-<form
-  @submit.prevent="addTodo"
->
-  <div class="field is-grouped mb-5">
-    <p class="control is-expanded">
-      <input 
-        v-model="newTodoContent"
-        class="input" 
-        type="text" 
-        placeholder="Add a To-Do"
-        >
-    </p>
-    <p class="control">
-      <button
-      :disabled="!newTodoContent"
-      class="button is-info">
-
-        Add
-      </button>
-        
-
-    </p>
-  </div>
-</form>
-
-
+    <form
+    @submit.prevent="addTodo"
+    >
+        <div class="field is-grouped mb-5">
+            <p class="control is-expanded">
+            <input 
+                v-model="newTodoContent"
+                class="input" 
+                type="text" 
+                placeholder="Add a To-Do"
+                >
+            </p>
+            <p class="control">
+            <button
+            :disabled="!newTodoContent"
+            class="button is-info">
+            Add
+            </button>
+            </p>
+        </div>
+    </form>
 </div>
 
 <div
@@ -72,12 +67,9 @@ class="card mb-5"
 </div>
 </div>
 
-
 </template>
 
 <script setup>
-
-
 
 
 /*
@@ -137,8 +129,6 @@ onMounted(() => {
 
 
 
-
-
 /*
   add todo
 */
@@ -173,8 +163,9 @@ const toggleDone = id => {
 
 </script>
 
-<style>
-  @import 'bulma/css/bulma.min.css';
+<style lang="scss">
+   @import "src/assets/styles/master.scss";
+
 
   .todo {
     max-width: 400px;

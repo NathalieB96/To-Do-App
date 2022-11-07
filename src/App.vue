@@ -1,20 +1,18 @@
 <template>
-
-  <router-view/>
-  <nav>
-    <router-link to="/">Home</router-link>
-    <router-link to="/todo">To-do</router-link>
-    <router-link to="/signin">Login</router-link>
-    <router-link to="/register">Register</router-link>
+  
+  <nav class="row col-xs-12">
+    <router-link class="navbar-item blue" to="/">Home</router-link>
+    <router-link class="navbar-item" to="/todo">To-do</router-link>
+    <router-link class="navbar-item" to="/signin">Login</router-link>
+    <router-link class="navbar-item" to="/register">Register</router-link>
     <button @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
+    <router-view/>
   </nav>
 
-  
 
 </template>
 
 <script setup>
-
 
 
 /*
@@ -59,17 +57,7 @@ const handleSignOut = () => {
 </script>
 
 
-<style>
-  @import 'bulma/css/bulma.min.css';
-
-  .todo {
-    max-width: 400px;
-    padding: 20px;
-    margin: 0 auto;
-  }
-
-  .line-through {
-    text-decoration: line-through;
-  }
+<style lang="scss">
+   @import "src/assets/styles/master.scss";
 </style>
 
