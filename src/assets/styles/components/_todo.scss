@@ -1,0 +1,29 @@
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+  
+
+    &__line-through {
+       text-decoration: line-through;
+    }
+    
+    &__success {
+        opacity: 0.7;
+    }
+
+    &__text-success {
+        color: #7DAF9C;
+    }
+
+    
+}

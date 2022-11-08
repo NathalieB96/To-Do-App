@@ -14,6 +14,8 @@ body * {
 body {
 	background-color: #B8C0FF;
 	font-family: $font-text;
+	border: solid 0.5rem #fff;
+    margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }

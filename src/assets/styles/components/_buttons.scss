@@ -9,15 +9,10 @@
 	font-size: 0.8rem;
 	line-height: 1;
 	padding: 0.5em 1em;
-	width: 100%;
 
 	&__icon {
 		width: 0.8em;
 		height: 0.8em;
-	}
-
-	& + & {
-		margin-top: 1rem;
 	}
 
 	&--margin-top {
@@ -33,4 +28,20 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	&__undone {
+		background-color: #D2D2D2;
+	}
+
+	&__success {
+		background-color: #7DAF9C;
+	}
+
+	&__delete {
+		background-color: #E95F84;
+	}
+}
+
+.card .button {
+	margin-left: 10px;
 }

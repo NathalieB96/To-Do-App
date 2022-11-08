@@ -1,9 +1,9 @@
 <template>
-    
+<main id="todo" class="add-padding">
     <h2 class="row row--center-xs col-xs-5 add-padding-bottom--small">Tell me what tasks need to be done:</h2>
 
     <form
-    class="row row--center-xs form"
+    class="row row--center-xs form add-padding-bottom--small"
     @submit.prevent="addTodo"
     >
         <div class="col-xs-5">
@@ -27,41 +27,36 @@
 
 <div
 v-for="todo in todos"
-class="card row row--center-xs"
-:class="{ 'has-background-success-light' : todo.done}"
+class="row row--center-xs"
+:class="{ 'card__success' : todo.done}"
 >
-<div class="card-content">
-  <div class="content">
-
-    <div class="columns is-mobile is-vcentered">
-      <div 
-        class="column"
-        :class="{'has-text-success line-through' : todo.done}"
-      >
-        {{todo.content}}
-
-      </div>
-      <div class="column is-5 has-text-right">
-        <button 
-          @click="toggleDone(todo.id)"
-          class="button"
-          :class="todo.done ? 'is-success' : 'is-light'"
+    <div class="card col-xs-8">
+    
+        <div 
+            class="card__content"
+            :class="{'card__text-success card__line-through' : todo.done}"
         >
-          &check; 
-        </button>
-        <button 
-          @click="deleteTodo(todo.id)"
-          class="button is-danger ml-2">
-          &cross; 
-        </button>
-      </div>
+           <p> {{todo.content}} </p> 
+
+        </div>
+        <div class="">
+            <button 
+            @click="toggleDone(todo.id)"
+            class="button"
+            :class="todo.done ? 'button__success' : 'button__undone'"
+            >
+            &check; 
+            </button>
+            <button 
+            @click="deleteTodo(todo.id)"
+            class="button button__delete">
+            &cross; 
+            </button>
+        </div>
 
     </div>
-    
-    
-  </div>
 </div>
-</div>
+</main>
 
 </template>
 
