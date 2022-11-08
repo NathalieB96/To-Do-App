@@ -6,9 +6,8 @@
     <router-link class="navbar-item" to="/signin">Login</router-link>
     <router-link class="navbar-item" to="/register">Register</router-link>
     <button @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
-    <router-view/>
   </nav>
-
+  <router-view/>
 
 </template>
 

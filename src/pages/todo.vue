@@ -1,37 +1,33 @@
 <template>
-    <div class="todo">
-
-    <div class="title has-text-centered">
-    My To-Do
-    </div>
-
+    
+    <h2 class="row row--center-xs col-xs-5 add-padding-bottom--small">Tell me what tasks need to be done:</h2>
 
     <form
+    class="row row--center-xs form"
     @submit.prevent="addTodo"
     >
-        <div class="field is-grouped mb-5">
-            <p class="control is-expanded">
+        <div class="col-xs-5">
             <input 
                 v-model="newTodoContent"
-                class="input" 
+                class="form__input" 
                 type="text" 
                 placeholder="Add a To-Do"
-                >
-            </p>
-            <p class="control">
+            >
+        </div>
+        <div class="col-xs-1">
             <button
             :disabled="!newTodoContent"
-            class="button is-info">
+            class="button">
             Add
             </button>
-            </p>
         </div>
+        
     </form>
-</div>
+
 
 <div
 v-for="todo in todos"
-class="card mb-5"
+class="card row row--center-xs"
 :class="{ 'has-background-success-light' : todo.done}"
 >
 <div class="card-content">
@@ -181,13 +177,13 @@ const toggleDone = id => {
    @import "src/assets/styles/master.scss";
 
 
-  .todo {
-    max-width: 400px;
-    padding: 20px;
-    margin: 0 auto;
-  }
+//   .todo {
+//     max-width: 400px;
+//     padding: 20px;
+//     margin: 0 auto;
+//   }
 
-  .line-through {
-    text-decoration: line-through;
-  }
+//   .line-through {
+//     text-decoration: line-through;
+//   }
 </style>
