@@ -9,6 +9,7 @@
 	font-size: 0.8rem;
 	line-height: 1;
 	padding: 0.5em 1em;
+	height: 100%;
 
 	&__icon {
 		width: 0.8em;
@@ -40,6 +41,10 @@
 	&__delete {
 		background-color: #E95F84;
 	}
+}
+
+.button:disabled {
+	background-color: lightgrey;
 }
 
 .card .button {
