@@ -10,11 +10,11 @@ $base-url: '../';
 	When you have declared your fonts, remember to set them as preload objects in header.php
 	Source: https://www.bramstein.com/writing/preload-hints-for-web-fonts.html
 */
-//@include font-face( Glacial Indifference, '../fonts/glacialindifference-regular-webfont', 400 );
-//@include font-face( Glacial Indifference, '../fonts/glacialindifference-italic-webfont', 400, italic );
+@include font-face( Montserrat, '../fonts/montserratalternates-medium-webfont.woff', 400 );
+@include font-face( Montserrat, '../fonts/montserratalternates-bold-webfont.woff', 500 );
 
-$font-headline: Cabin, Helvetica, Arial, sans-serif;
-$font-text: Noto Serif, Times, serif;
+$font-headline: Montserrat, Helvetica, Arial, sans-serif;
+$font-text: Montserrat, Times, serif;
 
 /*
 	Fluid font-size setup
@@ -34,8 +34,8 @@ $font-size-max: 26px;
 	Color maps: https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps
 	Usage: color(primary,base)
 */
-$color-primary: tomato;
-$color-secondary: #0969A2;
+$color-primary: #170A1C;
+$color-secondary: #6F58C9;
 $color-mix-amount: 10%;
 
 $colors: (
@@ -77,7 +77,7 @@ $xl: 1500px !default; 					// Set lg breakpoint's min width
 $grid-columns: 12 !default; 			// Set number of columns in the grid
 $row-max-width: 1400px !default; 		// Set the max-width of row
 $row-gutter-width: 1rem !default;		// Set row padding
-$gutter: 1.5rem !default; 				// Set gutter size
+$gutter: 0.3rem !default; 				// Set gutter size
 
 
 // GRID CLASSES
