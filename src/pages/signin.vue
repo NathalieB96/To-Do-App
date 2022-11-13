@@ -1,9 +1,13 @@
 <template>
-    <h1>Sign in to your Account</h1>
-    <p><input type="text" placeholder="E-mail" v-model="email"/></p>
-    <p><input type="password" placeholder="Password" v-model="password"/></p>
-    <p v-if="errMsg">{{ errMsg}}</p>
-    <p><button @click="register">Sign-In</button></p>
+    <div class="col-xs-6">
+        <h1>Welcome to todly</h1>
+    </div>
+    <div>
+        <p><input type="text" placeholder="E-mail" v-model="email"/></p>
+        <p><input type="password" placeholder="Password" v-model="password"/></p>
+        <p v-if="errMsg">{{ errMsg}}</p>
+        <p><button @click="register">Sign-In</button></p>
+    </div>
 
 </template>
 
