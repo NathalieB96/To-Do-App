@@ -133,7 +133,6 @@ onMounted(() => {
   onSnapshot(getUserTodoQuery, (querySnapshot) => {
     const fbTodos = [];
 
-
     querySnapshot.forEach((doc) => {
       const todo = {
         id: doc.id, 
@@ -145,7 +144,7 @@ onMounted(() => {
       fbTodos.push(todo)
     });
     todos.value = fbTodos
-  });
+  },(err) => {console.log(err)});
 })
 
 
