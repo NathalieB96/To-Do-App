@@ -8,7 +8,6 @@
         <button class="login__button" @click="register">Register</button>
         <p v-if="errMsg">{{ errMsg}}</p>
         <p>Already have an account? <router-link to="/signin">Sign In</router-link></p>
-        
         </div>
     </div>
     <div class="row">

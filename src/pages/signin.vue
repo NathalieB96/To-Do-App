@@ -1,12 +1,20 @@
 <template>
-    <div class="col-xs-6">
-        <h1>Welcome to todly</h1>
+    <h1>Welcome to todly</h1>
+    <div class="login row col-xs-10 col-md-6">
+        <div class="login__container add-padding--small">
+            <h2>Login</h2>
+            <input class="login__input" type="text" placeholder="E-mail" v-model="email"/>
+            <input class="login__input" type="password" placeholder="Password" v-model="password"/>
+            <p v-if="errMsg">{{ errMsg}}</p>
+            <button class="login__button" @click="register">Sign-In</button>
+            <p>No account yet? <router-link to="/register">Register</router-link></p>
+        </div>
     </div>
-    <div>
-        <p><input type="text" placeholder="E-mail" v-model="email"/></p>
-        <p><input type="password" placeholder="Password" v-model="password"/></p>
-        <p v-if="errMsg">{{ errMsg}}</p>
-        <p><button @click="register">Sign-In</button></p>
+
+    <div class="row">
+        <button class="login__google" @click="signInWithGoogle"> 
+            <img src="../assets/img/btn_google_signin_light_normal_web.png">
+        </button>
     </div>
 
 </template>
@@ -43,10 +51,7 @@
                     errMsg.value = "Email or password was incorrect";
                     break; 
             }
-
-
-
-            alert(error.message);
+            // alert(error.message);
         });
     };
 

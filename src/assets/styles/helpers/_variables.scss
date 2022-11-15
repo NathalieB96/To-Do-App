@@ -10,7 +10,7 @@ $base-url: '../';
 	When you have declared your fonts, remember to set them as preload objects in header.php
 	Source: https://www.bramstein.com/writing/preload-hints-for-web-fonts.html
 */
-@include font-face( Montserrat, '../src/assets/fonts/montserratalternates-medium-webfont', 400 );
+@include font-face( Montserrat, '../src/assets/fonts/montserrat-regular-webfont', 400 );
 @include font-face( Montserrat, '../src/assets/fonts/montserratalternates-bold-webfont', 500 );
 
 $font-headline: Montserrat, Helvetica, Arial, sans-serif;
