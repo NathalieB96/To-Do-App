@@ -3,9 +3,52 @@
     &__input {
 		background: rgba(255, 255, 255, 0.5);
 		border: 0;
-		border-radius: 10px;
-		font-size: 0.8rem;
+		font-size: 0.85rem;
 		padding: 0.5em 1em;
 		width: 100%;
 	}
+}
+
+
+.login {
+	background-color: #ffffff;
+	border-radius: 10px;
+
+	&__container {
+		width: 100%;
+		border-radius: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&__input, &__button {
+		margin-bottom: 0.7rem;
+		border: none;
+		padding: 0.5rem;
+		width: 80%;
+		border-radius: 10px;
+	}
+	&__input {
+		background: rgba(220, 223, 255, 0.5);
+		border-radius: 10px;
+		font-size: 0.85rem;
+		width: 80%;
+		
+	}
+	
+	&__button{
+		background-color: color(secondary,100);
+		font-size: 0.85rem;
+		color: #ffffff;
+		cursor: pointer;
+	}
+
+	&__google {
+		background-color: transparent;
+		border: none;
+		margin: 1rem auto;
+		cursor: pointer;
+	}
+
 }

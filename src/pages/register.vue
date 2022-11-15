@@ -1,9 +1,22 @@
 <template>
-    <h1>Create an Account</h1>
-    <p><input type="text" placeholder="E-mail" v-model="email"/></p>
-    <p><input type="password" placeholder="Password" v-model="password"/></p>
-    <p><button @click="register">Register</button></p>
-    <p><button @click="signInWithGoogle">Sign In with Google</button></p>
+    <h1>Welcome to todly</h1>
+    <div class="login row col-xs-10 col-md-6">
+        <div class="login__container add-padding--small">
+        <h2>Register</h2>
+        <input class="login__input" type="text" placeholder="E-mail" v-model="email"/>
+        <input class="login__input" type="password" placeholder="Password" v-model="password"/>
+        <button class="login__button" @click="register">Register</button>
+        <p v-if="errMsg">{{ errMsg}}</p>
+        <p>Already have an account? <router-link to="/signin">Sign In</router-link></p>
+        
+        </div>
+    </div>
+    <div class="row">
+        <button class="login__google" @click="signInWithGoogle"> 
+            <img src="../assets/img/btn_google_signin_light_normal_web.png">
+        </button>
+    </div>
+
 </template>
 
 <script setup>
@@ -16,6 +29,7 @@
     import { useRouter } from 'vue-router'; //imports router
     const email = ref("");
     const password = ref("");
+    const errMsg = ref(""); 
     const router = useRouter()
 
     const register = () => {
@@ -27,7 +41,15 @@
         })
         .catch((error) => {
             console.log(error.code);
-            alert(error.message);
+            switch (error.code) {
+                case "aut/invalid-email":
+                    errMsg.value = "Invalid email";
+                    break;
+                default: 
+                    errMsg.value = "Email or password is not filled in correctly";
+                    break; 
+            }
+            // alert(error.message);
         });
     };
 

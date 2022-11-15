@@ -1,10 +1,10 @@
 <template>
   
   <nav class="row col-xs-12">
-    <router-link class="navbar-item blue" to="/">Home</router-link>
+    <!-- <router-link class="navbar-item blue" to="/">Home</router-link>
     <router-link class="navbar-item" to="/todo">To-do</router-link>
     <router-link class="navbar-item" to="/signin">Login</router-link>
-    <router-link class="navbar-item" to="/register">Register</router-link>
+    <router-link class="navbar-item" to="/register">Register</router-link> -->
     <button @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
   </nav>
   <router-view/>
@@ -29,7 +29,6 @@ const router = useRouter()
 /*
   logout
 */
-
 
 const isLoggedIn = ref(false);
 

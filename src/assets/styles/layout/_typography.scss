@@ -23,13 +23,13 @@ h6 {
 :not([class^='col']) + h4,
 :not([class^='col']) + h5,
 :not([class^='col']) + h6 {
-	margin-top: 2.25em;
+	margin-top: 1.5em;
 }
 
 h1,
 .look-like-h1 {
 	color: color(primary,100);
-	font-size: 3rem;
+	font-size: 2rem;
 	margin-bottom: 1em;
 	text-align: center;
 }
@@ -93,8 +93,7 @@ p small {
 a {
 	@include transition( all 0.3s );
 
-	border-bottom: 1px dotted;
-	color: color(primary,100);
+	color: #E95F84;
 	display: inline-block;
 	text-decoration: none;
 
