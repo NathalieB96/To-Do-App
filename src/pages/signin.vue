@@ -5,7 +5,7 @@
             <h2>Login</h2>
             <input class="login__input" type="text" placeholder="E-mail" v-model="email"/>
             <input class="login__input" type="password" placeholder="Password" v-model="password"/>
-            <p v-if="errMsg">{{ errMsg}}</p>
+            <p class="error-msg" v-if="errMsg">{{ errMsg}}</p>
             <button class="login__button" @click="register">Sign-In</button>
             <p>No account yet? <router-link to="/register">Register</router-link></p>
         </div>
