@@ -5,8 +5,10 @@
             <h2>Login</h2>
             <input class="login__input" type="text" placeholder="E-mail" v-model="email"/>
             <input class="login__input" type="password" placeholder="Password" v-model="password"/>
-            <p class="error-msg" v-if="errMsg">{{ errMsg}}</p>
-            <button class="login__button" @click="register">Sign-In</button>
+            <a class="login__reset" @click="resetPassword">Forgot Password</a>
+            <p>{{ successMsg }}</p>
+            <p v-if="errMsg">{{ errMsg }}</p>
+            <button class="login__button" @click="signin">Sign-In</button>
             <p>No account yet? <router-link to="/register">Register</router-link></p>
         </div>
     </div>
@@ -21,15 +23,16 @@
 
 <script setup>
     import { ref } from 'vue';
-    import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+    import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
     import { useRouter } from 'vue-router'; //imports router
     const email = ref("");
     const password = ref("");
     const errMsg = ref(""); // Error message
     const router = useRouter()
-
-    const register = () => {
     const auth = getAuth()
+    const successMsg = ref("");
+
+    const signin = () => {
     signInWithEmailAndPassword(auth, email.value, password.value)
         .then((data) => {
             console.log("Successfully signed in");
@@ -57,6 +60,24 @@
 
     const signInWithGoogle = () => {
 
+    }
+
+    const resetPassword = () => {
+
+        sendPasswordResetEmail(auth, email.value)
+        .then((data) => {
+            console.log("email send");
+            successMsg.value = "We have sent you an email to reset your password!";
+
+            //sucesssMsg.value = "We have sent you an email to reset your password!"
+            // const successMsg =  "We have sent you an email to reset your password!"
+            //successMsg.value = "We have sent you an email to reset your password!"
+            // Password reset email sent!
+            // ..
+        })
+        .catch((error) => {
+            console.log(error.code);
+        });
     }
 </script>
 
