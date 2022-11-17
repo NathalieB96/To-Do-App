@@ -25,37 +25,35 @@
     </form>
 
 
-<div
-v-for="todo in todos"
-class="row row--center-xs"
-:class="{ 'card__success' : todo.done}"
->
-    <div class="card col-xs-8">
-    
-        <div 
-            class="card__content"
-            :class="{'card__text-success card__line-through' : todo.done}"
-        >
-           <p> {{todo.content}} </p> 
-
-        </div>
-        <div class="">
-            <button 
-            @click="toggleDone(todo.id)"
-            class="button"
-            :class="todo.done ? 'button__success' : 'button__undone'"
+    <div
+    v-for="todo in todos"
+    class="row row--center-xs"
+    :class="{ 'card__success' : todo.done}"
+    >
+        <div class="card col-xs-8">
+            <div 
+                class="card__content"
+                :class="{'card__text-success card__line-through' : todo.done}"
             >
-            &check; 
-            </button>
-            <button 
-            @click="deleteTodo(todo.id)"
-            class="button button__delete">
-            &cross; 
-            </button>
-        </div>
+              <p> {{todo.content}} </p> 
 
+            </div>
+            <div class="">
+                <button 
+                @click="toggleDone(todo.id)"
+                class="button"
+                :class="todo.done ? 'button__success' : 'button__undone'"
+                >
+                &check; 
+                </button>
+                <button 
+                @click="deleteTodo(todo.id)"
+                class="button button__delete">
+                &cross; 
+                </button>
+            </div>
+        </div>
     </div>
-</div>
 </main>
 
 </template>
@@ -82,10 +80,8 @@ get current user
 */
 
 const auth = getAuth();
-console.log(auth);
+const user = auth.currentUser;    
 
-let user = auth.currentUser;    
-console.log(user);
 
 /*
 count todos
@@ -196,15 +192,4 @@ const toggleDone = id => {
 
 <style lang="scss">
    @import "src/assets/styles/master.scss";
-
-
-//   .todo {
-//     max-width: 400px;
-//     padding: 20px;
-//     margin: 0 auto;
-//   }
-
-//   .line-through {
-//     text-decoration: line-through;
-//   }
 </style>

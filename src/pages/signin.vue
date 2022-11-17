@@ -5,7 +5,7 @@
             <h2>Login</h2>
             <input class="login__input" type="text" placeholder="E-mail" v-model="email"/>
             <input class="login__input" type="password" placeholder="Password" v-model="password"/>
-            <a class="login__reset" @click="resetPassword">Forgot Password</a>
+            <a class="login__reset" @click="resetPassword">Forgot Password?</a>
             <p>{{ successMsg }}</p>
             <p v-if="errMsg">{{ errMsg }}</p>
             <button class="login__button" @click="signin">Sign-In</button>
@@ -22,16 +22,28 @@
 </template>
 
 <script setup>
+    /*
+    imports 
+    */
+
     import { ref } from 'vue';
     import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
-    import { useRouter } from 'vue-router'; //imports router
+    import { useRouter } from 'vue-router'; 
+    
+    const router = useRouter()
+
+
+    const auth = getAuth()
     const email = ref("");
     const password = ref("");
-    const errMsg = ref(""); // Error message
-    const router = useRouter()
-    const auth = getAuth()
-    const successMsg = ref("");
+    
 
+    /*
+    Sign in with email
+    */
+    
+    const errMsg = ref(""); // Error message sign in
+    
     const signin = () => {
     signInWithEmailAndPassword(auth, email.value, password.value)
         .then((data) => {
@@ -62,18 +74,18 @@
 
     }
 
+    /*
+    Reset Password
+    */
+
+    const successMsg = ref(""); // variable for success message
+
     const resetPassword = () => {
 
         sendPasswordResetEmail(auth, email.value)
         .then((data) => {
             console.log("email send");
             successMsg.value = "We have sent you an email to reset your password!";
-
-            //sucesssMsg.value = "We have sent you an email to reset your password!"
-            // const successMsg =  "We have sent you an email to reset your password!"
-            //successMsg.value = "We have sent you an email to reset your password!"
-            // Password reset email sent!
-            // ..
         })
         .catch((error) => {
             console.log(error.code);
