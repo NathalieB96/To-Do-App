@@ -38,11 +38,11 @@
         .catch((error) => {
             console.log(error.code);
             switch (error.code) {
-                case "aut/invalid-email":
-                    errMsg.value = "Invalid email";
+                case "auth/invalid-email":
+                    errMsg.value = "Invalid E-mail";
                     break;
                 case "auth/user-not-found":
-                    errMsg.value = "No account with this email was found";
+                    errMsg.value = "No account with this E-mail was found";
                     break; 
                 case "auth/wrong-password":
                     errMsg.value = "Incorrect password"

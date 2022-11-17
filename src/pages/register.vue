@@ -41,11 +41,14 @@
         .catch((error) => {
             console.log(error.code);
             switch (error.code) {
-                case "aut/invalid-email":
-                    errMsg.value = "Invalid email";
+                case "auth/missing-email":
+                    errMsg.value = "Please enter an E-mail";
+                    break;
+                case "auth/invalid-email":
+                    errMsg.value = "Invalid E-mail";
                     break;
                 default: 
-                    errMsg.value = "Email or password is not filled in correctly";
+                    errMsg.value = "E-mail or password is invalid";
                     break; 
             }
             // alert(error.message);
