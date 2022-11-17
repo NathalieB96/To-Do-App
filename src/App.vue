@@ -1,11 +1,11 @@
 <template>
   
-  <nav class="row col-xs-12">
+  <nav class="row row--end-xs	col-xs-12">
     <!-- <router-link class="navbar-item blue" to="/">Home</router-link>
     <router-link class="navbar-item" to="/todo">To-do</router-link>
     <router-link class="navbar-item" to="/signin">Login</router-link>
     <router-link class="navbar-item" to="/register">Register</router-link> -->
-    <button @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
+    <a class="sign-out" @click="handleSignOut" v-if="isLoggedIn">Sign out</a>
   </nav>
   <router-view/>
 
@@ -20,7 +20,6 @@
 
 import { ref, onMounted } from 'vue'; //login + todo
 import { getAuth, onAuthStateChanged, signOut} from "firebase/auth";  //login
-import { collection, onSnapshot, addDoc, doc, deleteDoc } from "firebase/firestore";
 import { db } from '@/firebase';
 import { useRouter } from 'vue-router'; //imports router
 
