@@ -11,8 +11,8 @@
         </div>
     </div>
     <div class="row">
-        <button class="login__google" @click="signInWithGoogle"> 
-            <img src="../assets/img/btn_google_signin_light_normal_web.png">
+        <button class="login__google-button" @click="signInWithGoogle"> 
+            <img src="../assets/img/btn_google_signin_light_normal_web.png" alt="Google Logo">
         </button>
     </div>
 

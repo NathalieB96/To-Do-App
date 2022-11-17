@@ -20,7 +20,6 @@
 
 import { ref, onMounted } from 'vue'; //login + todo
 import { getAuth, onAuthStateChanged, signOut} from "firebase/auth";  //login
-import { db } from '@/firebase';
 import { useRouter } from 'vue-router'; //imports router
 
 const router = useRouter()
