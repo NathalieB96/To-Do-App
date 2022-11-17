@@ -1,12 +1,12 @@
 <template>
-<main id="todo" class="add-padding">
-    <h2 class="row row--center-xs col-xs-5 add-padding-bottom--small">Tell me what tasks need to be done:</h2>
+<main id="todo" class="add-padding--medium">
+    <h2 class="row row--center-xs col-xs-10 col-md-5 add-padding-bottom--small">Tell me what tasks need to be done:</h2>
 
     <form
     class="row row--center-xs form add-padding-bottom--small"
     @submit.prevent="addTodo"
     >
-        <div class="col-xs-5">
+        <div class="col-xs-7 col-md-5">
             <input 
                 v-model="newTodoContent"
                 class="form__input" 
@@ -14,7 +14,7 @@
                 placeholder="Add a To-Do"
             >
         </div>
-        <div class="col-xs-1">
+        <div class="col-xs-1 col-md-1">
             <button
             :disabled="!newTodoContent"
             class="button">
@@ -30,7 +30,7 @@
     class="row row--center-xs"
     :class="{ 'card__success' : todo.done}"
     >
-        <div class="card col-xs-8">
+        <div class="card col-xs-10 col-md-8">
             <div 
                 class="card__content"
                 :class="{'card__text-success card__line-through' : todo.done}"
