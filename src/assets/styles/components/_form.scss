@@ -39,8 +39,15 @@
 	&__button{
 		background-color: color(secondary,100);
 		font-size: 0.85rem;
+		margin-top: 0.7rem;
 		color: #ffffff;
 		cursor: pointer;
+	}
+
+	&__reset {
+		font-size: 0.6rem;
+		width: 80%;
+		text-align: right;
 	}
 
 	&__google {
