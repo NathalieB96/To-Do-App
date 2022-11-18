@@ -29,7 +29,10 @@
     */
 
     import { ref } from 'vue';
-    import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+    import { getAuth, 
+            signInWithEmailAndPassword, sendPasswordResetEmail, 
+            GoogleAuthProvider, signInWithPopup
+         } from "firebase/auth";
     import { useRouter } from 'vue-router'; 
     
     const router = useRouter()
@@ -73,8 +76,16 @@
     };
 
     const signInWithGoogle = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(getAuth(), provider) //creaetes google pop up to sign in 
+            .then((result) => {
+                console.log(result.user);
+                router.push("/todo");
+            })
+        .catch((error) => {
 
-    }
+        });
+    };
 
     /*
     Reset Password
