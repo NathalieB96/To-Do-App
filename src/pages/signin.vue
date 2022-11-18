@@ -19,6 +19,8 @@
         </button>
     </div>
 
+    <img class="login-image" src="../assets/img/women.svg" alt="Women with Pencil" >
+
 </template>
 
 <script setup>

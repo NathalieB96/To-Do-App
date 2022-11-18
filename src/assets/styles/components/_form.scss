@@ -58,3 +58,16 @@
 	}
 
 }
+
+.login-image {
+	position: absolute;
+    bottom: 0;
+	right: 0;
+	padding: 1rem 2rem;
+	width: 10rem;
+
+
+	@media (min-width: $md) {
+		width: 13rem;
+	}
+}
