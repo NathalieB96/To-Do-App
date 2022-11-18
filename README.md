@@ -1,29 +1,37 @@
-# todo-app
+# ToDo-App Nathalie Büttner
 
-This template should help get you started developing with Vue 3 in Vite.
+## About this Repository 
+Following functionalities are implemented:
+- Authentication & Authorization with firebase
+    - sign in with google
+- firestore database stores data of specific user
+    - real-time updates with onSnapshot() Method
+- vue router
 
-## Recommended IDE Setup
+## Frameworks used
+- vue.js
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Folder structure
+| Folder | Description           |   |   |   |
+|--------|-----------------------|---|---|---|
+| pages  | vue pages             |   |   |   |
+| assets | styles, images, fonts |   |   |   |
+| router | vue router            |   |   |   |
+|        |                       |   |   |   |
 
-## Customize configuration
+## Architectural Overview
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+relativer pfad
+![Architectural Overview](src/assets/img/todo-app_software-architecture.png)
 
-## Project Setup
-
+## Local Setup Instructions
 ```sh
 npm install
 ```
-
-### Compile and Hot-Reload for Development
-
 ```sh
 npm run dev
 ```
+Please note that the Google login only works live, as the domain must be authorized in Firebase.
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## Live Version
+https://to-do-app-53bd6.web.app
