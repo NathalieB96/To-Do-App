@@ -7,8 +7,9 @@ html {
 /* basic styles */
 
 body * {
+	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
-	&:before, &:after { -webkit-backface-visibility: hidden; }
+	&:before, &:after { backface-visibility: hidden; }
 }
 
 body {
