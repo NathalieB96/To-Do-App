@@ -75,6 +75,10 @@
         });
     };
 
+    /*
+    Sign in with Google
+    */
+
     const signInWithGoogle = () => {
         const provider = new GoogleAuthProvider();
         signInWithPopup(getAuth(), provider) //creaetes google pop up to sign in 

@@ -43,7 +43,7 @@
                 @click="toggleDone(todo.id)"
                 class="button"
                 :class="todo.done ? 'button__success' : 'button__undone'"
-                >
+                > 
                 &check; 
                 </button>
                 <button 
@@ -84,11 +84,6 @@ const auth = getAuth();
 const user = auth.currentUser;    
 
 
-/*
-count todos
-*/
-// const successTodo = collection(db, "todos");
-// console.log(successTodo);
 
 
 /*
@@ -186,8 +181,6 @@ const toggleDone = id => {
   });
 
 }
-
-
 
 </script>
 
